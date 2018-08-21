@@ -28,35 +28,33 @@ namespace Helloworld
 
         public string GetHelloMessage()
         {
-            //DateTime date = new DateTime(2018, 08, 20, 8, 59, 59);
-            
-            
+            DateTime date = _time.date;
 
             string message = "";
 
-            if (_time.date.DayOfWeek == DayOfWeek.Saturday || _time.date.DayOfWeek == DayOfWeek.Sunday)
+            if (date.DayOfWeek == DayOfWeek.Saturday || date.DayOfWeek == DayOfWeek.Sunday)
             {
                 message= "Bon week-end "+ Environment.UserName;
 
             }
             else
             {
-                if (_time.date.DayOfWeek == DayOfWeek.Monday && _time.date.Hour < startMorning)
+                if (date.DayOfWeek == DayOfWeek.Monday && date.Hour < startMorning)
                 {
                     message = "Bon week-end " + Environment.UserName;
 
                 }
                 else
                 {
-                    if (_time.date.Hour >= startMorning && _time.date.Hour < startAfternoon)
+                    if (date.Hour >= startMorning && date.Hour < startAfternoon)
                     {
                         message = "Bonjour " + Environment.UserName;
                     }
-                    if (_time.date.Hour >= startAfternoon && _time.date.Hour < startEvenig)
+                    if (date.Hour >= startAfternoon && date.Hour < startEvenig)
                     {
                         message = "Bon après-midi " + Environment.UserName;
                     }
-                    if (_time.date.Hour >= startEvenig)
+                    if (date.Hour >= startEvenig)
                     {
                         message = "Bonsoir " + Environment.UserName;
 
